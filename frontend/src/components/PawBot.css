@@ -1,0 +1,162 @@
+.pawbot-trigger {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--primary-color, #ff6b6b);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: transform 0.2s;
+}
+
+.pawbot-trigger:hover {
+  transform: scale(1.05);
+}
+
+.pawbot-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 350px;
+  height: 500px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.pawbot-header {
+  background-color: var(--primary-color, #ff6b6b);
+  color: white;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pawbot-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+}
+
+.pawbot-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.message-wrapper.bot {
+  justify-content: flex-start;
+}
+
+.message-wrapper.user {
+  justify-content: flex-end;
+}
+
+.message-bubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  line-height: 1.4;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+.message-bubble.bot {
+  background-color: white;
+  color: #333;
+  border: 1px solid #eee;
+  border-bottom-left-radius: 4px;
+}
+
+.message-bubble.user {
+  background-color: var(--primary-color, #ff6b6b);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.pawbot-input-area {
+  padding: 12px;
+  background: white;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 8px;
+}
+
+.pawbot-input-area input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.pawbot-input-area input:focus {
+  border-color: var(--primary-color, #ff6b6b);
+}
+
+.pawbot-input-area button {
+  background-color: var(--primary-color, #ff6b6b);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pawbot-input-area button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.loading-dots {
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #888;
+}
+
+/* Responsive for mobile */
+@media (max-width: 480px) {
+  .pawbot-container {
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+  }
+}
